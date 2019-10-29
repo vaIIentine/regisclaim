@@ -80,6 +80,7 @@ function veriflogin($otp, $token)
 function claim($token)
 	{
 	$data = '{"promo_code":"GOFOODBOBA07"}';
+	$data1 = '{"promo_code":"COBAINGOJEK"}';
 	$claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
 	if ($claim['success'] == 1)
 		{
@@ -91,20 +92,7 @@ function claim($token)
 		return false;
 		}
 	}
-function claim($token)
-	{
-	$data = '{"promo_code":"COBAINGOJEK"}';
-	$claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-	if ($claim['success'] == 1)
-		{
-		return $claim['data']['message'];
-		}
-	  else
-		{
-      save("error_log.txt", json_encode($claim));
-		return false;
-		}
-	}
+
 echo "Choose Login or Register? Login = 1 & Register = 2: ";
 $type = trim(fgets(STDIN));
 if($type == 2){
