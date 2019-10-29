@@ -91,7 +91,7 @@ function claim($token)
 		return false;
 		}
 	}
-function claim1($token)
+function claim($token)
 	{
 	$data = '{"promo_code":"COBAINGOJEK"}';
 	$claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
